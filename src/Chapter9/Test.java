@@ -7,15 +7,16 @@ import java.util.Random;
  * Created by sf on 2017/8/22.
  */
 public class Test {
+    Test(int a){
+        System.out.println("hello,"+a);
+    }
+    Test(double a){
+        System.out.println("hello,"+a);
+    }
+    Test(){
+        this(1);//必须是第一个语句，所以在一个构造方法中只能调用本类的一个重载构造方法
+    }
     public static void main(String[] args) {
-        Random random=new Random(1000);
-        for(int i=0;i<10;i++){
-            System.out.printf("%4d ",random.nextInt(1000));
-        }
-        System.out.println();
-        Random random1=new Random(1000);
-        for(int i=0;i<10;i++){
-            System.out.printf("%4d ",random1.nextInt(1000));
-        }
+       Test test=new Test();
     }
 }
